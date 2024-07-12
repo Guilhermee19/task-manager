@@ -1,0 +1,12 @@
+<section>
+  <p> {{ task }} </p>
+
+  <div cdkDropList class="list-tasks" (cdkDropListDropped)="drop($event)">
+    @for (movie of movies; track movie) {
+      <div class="card-task" cdkDrag>
+        <div class="card-placeholder" *cdkDragPlaceholder></div>
+        {{movie}}
+      </div>
+    }
+  </div>
+</section>
