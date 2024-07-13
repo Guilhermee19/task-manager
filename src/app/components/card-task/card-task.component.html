@@ -1,12 +1,17 @@
-<section>
-  <p> {{ task }} </p>
+<section cdkDrag>
+  <p>{{ task.label }}</p>
 
-  <div cdkDropList class="list-tasks" (cdkDropListDropped)="drop($event)">
-    @for (movie of movies; track movie) {
-      <div class="card-task" cdkDrag>
-        <div class="card-placeholder" *cdkDragPlaceholder></div>
-        {{movie}}
-      </div>
+  <div class="list-tasks"
+    cdkDropList
+    [cdkDropListData]="task.tasks"
+    (cdkDropListDropped)="drop($event)">
+
+    <div class="card-placeholder" *cdkDragPlaceholder></div>
+    @for (item of task.tasks; track item) {
+      <div class="card-task" cdkDrag>{{item}}</div>
     }
   </div>
+
+  <button class="btn" mat-button color="primary" (click)="newTask()"> New Task </button>
+
 </section>

@@ -1,6 +1,15 @@
-<div cdkDropList cdkDropListOrientation="horizontal" class="cards-list" (cdkDropListDropped)="dropColl($event)">
-  @for (timePeriod of timePeriods; track timePeriod) {
-    <!-- <div class="card-tasks" cdkDrag>{{timePeriod}}</div> -->
-    <app-card-task class="card-tasks" cdkDrag [task]="timePeriod"></app-card-task>
-  }
-</div>
+<main>
+  <header>
+    <button mat-flat-button color="primary" (click)="newList()"> New List </button>
+  </header>
+
+  <div class="cards-list"
+    cdkDropListGroup
+    cdkDropList
+    cdkDropListOrientation="horizontal"
+    (cdkDropListDropped)="dropList($event)">
+    @for (card of cards_list; track card) {
+      <app-card-task class="card-tasks" cdkDrag [task]="card"></app-card-task>
+    }
+  </div>
+</main>
