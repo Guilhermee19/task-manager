@@ -40,13 +40,14 @@ main{
   }
 
   .cdk-drag-animating {
-    // transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 
 .card-tasks {
   width: 350px;
+  max-width: 350px;
   cursor: move;
 
   &:last-child {

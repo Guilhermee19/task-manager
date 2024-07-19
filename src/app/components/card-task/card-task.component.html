@@ -6,7 +6,7 @@
     [cdkDropListData]="task.tasks"
     (cdkDropListDropped)="drop($event)">
 
-    <div class="card-placeholder" *cdkDragPlaceholder></div>
+    <!-- <div class="card-placeholder" *cdkDragPlaceholder></div> -->
     @for (item of task.tasks; track item) {
       <div class="card-task" cdkDrag>{{item}}</div>
     }

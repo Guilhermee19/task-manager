@@ -1,0 +1,84 @@
+main{
+  padding: 1rem;
+
+  .card-coll {
+    width: 400px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+
+    h2{
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .card-list {
+      min-height: 60px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+
+      &.cdk-drop-list-dragging .card-task:not(.cdk-drag-placeholder) {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+      }
+    }
+  }
+
+
+
+}
+.card-task {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: .5rem 1.5rem .5rem 1rem;
+  border-radius: .5rem;
+  background-color: #f8fafc;
+  min-height: 50px;
+
+  i.icon-move{
+    cursor: move;
+    opacity: .5;
+  }
+
+  p{
+    font-weight: 500;
+    margin: 0;
+  }
+
+  i.icon-open{
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  &:last-child {
+    border: none;
+  }
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: .5rem;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+.card-placeholder {
+  padding: .3rem .5rem .3rem 1.5rem;
+  border-radius: .5rem;
+  background-color: rgba(248, 250, 252, 0.4);
+  border: dotted 3px #777777;
+  min-height: 50px;
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

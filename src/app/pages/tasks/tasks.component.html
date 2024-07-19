@@ -1,0 +1,22 @@
+<main id="task" cdkDropListGroup>
+  @for (coll of colls; track $index) {
+    <div class="card-coll">
+      <h2> {{ coll.title }} </h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="coll.array"
+        class="card-list"
+        (cdkDropListDropped)="drop($event)">
+        @for (item of coll.array; track item) {
+          <div class="card-task" cdkDrag [style.backgroundColor]="item.color" [style.color]="item.color_text">
+            <div class="card-placeholder" *cdkDragPlaceholder></div>
+            <i icon="arrows_up_down_left_right" class="icon-move" cdkDragHandle></i>
+            <p> {{item.name}} </p>
+            <i icon="arrow_up_right_from_square" class="icon-open" routerLink="/tasks/{{item.name}}"></i>
+          </div>
+        }
+      </div>
+    </div>
+  }
+</main>
